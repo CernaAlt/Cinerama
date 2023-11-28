@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle</title>
+
+    <!--Bootrtrasp-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!--Personalizado-->
+    <link rel="stylesheet" href="estilos.css">
+
+    <!--Logica-->
+
+    <!--Font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!--Header resposive-->
+    <nav class="container-fluid border-bottom" style="background-color: #09090A;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md order-md-1 mb-4 text-center">
+                    <!-- Utiliza la clase col-md para especificar el tamaño en dispositivos medianos y grandes -->
+                    <a href="index.html">
+                        <button class="btn">
+                            <h1 style="color: #CB1111;">CINERAMA</h1>
+                        </button>
+                    </a>
+                </div>
+
+                <div class="col-md opcionesCinerama order-md-2 text-center mb-3">
+                    <ul class="navbar-nav d-md-flex flex-md-row flex-sm-column">
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="cartelera.html">
+                                <button class="btn" style="color: #fcfcfc;">Peliculas</button>
+                            </a>
+                        </li>
+
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="#">
+                                <button class="btn" style="color: #fcfcfc;">Promociones</button>
+                            </a>
+                        </li>
+
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="alimentos.html">
+                                <button class="btn" style="color: #fcfcfc;">Alimentos</button>
+                            </a>
+                        </li>
+
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="cines.html">
+                                <button class="btn" style="color: #fcfcfc;">Cines</button>
+                            </a>
+                        </li>
+
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="#">
+                                <button class="btn" style="color: #fcfcfc;">Contactanos</button>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md order-md-3 text-center">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link my-2" href="registrar.html">
+                                <i class="fa-solid fa-user-pen" style="color: #fcfcfc;"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="#">
+                                <div class="order-3">
+                                    <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+                                        <i class="fas fa-universal-access" style="color: #fcfcfc;"></i> accesibilidad
+                                    </button>
+                                </div>
+
+                                <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false"
+                                    tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                                    <div class="offcanvas-header">
+                                        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Configuración</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item">
+                                                <label for="fontSizeRange">Tamaño de letra:</label>
+                                                <input type="range" class="form-range" id="fontSizeRange">
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" role="switch"
+                                                        id="colorBlindSwitch">
+                                                    <label class="form-check-label" for="colorBlindSwitch">Activar
+                                                        filtro daltonico</label>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" role="switch"
+                                                        id="darkModeSwitch">
+                                                    <label class="form-check-label" for="darkModeSwitch">
+                                                        <span id="darkModeText">Modo oscuro</span>
+                                                        <span id="lightModeText" style="display: none;">Modo
+                                                            claro</span>
+                                                    </label>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" role="switch"
+                                                        id="flexSwitchCheckDefault">
+                                                    <label class="form-check-label"
+                                                        for="flexSwitchCheckDefault">Resaltar botones</label>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <label for="languageSelect">Seleccionar idioma:</label>
+                                                <select class="form-select" id="languageSelect">
+                                                    <option value="es">Español</option>
+                                                    <option value="en">English</option>
+                                                    <!-- Agrega más opciones de idioma según sea necesario -->
+                                                </select>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+    </nav>
+
+    <!--Seccion Trailer-->
+    <section class="container-fluid p-5" id="juegaoMuere" style="background-color: #09090A; height: 50vh;">
+        <div class="container" style="height: 100%;">
+            <iframe class="videoTrailer" src="https://www.youtube.com/embed/Duce5qS1fkk" frameborder="0"
+                allowfullscreen>
+            </iframe>
+        </div>
+        </div>
+    </section>
+
+    <!--Titulo y Botton a comprar-->
+    <section class="container-fluid border-bottom border-dark p-5">
+        <div class="container text-center">
+            <div class=" row">
+                <div class="col">
+                    <h1 style="color: #CB1111;">
+                        Juega o Muere
+                    </h1>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--Datos Pelicula-->
+    <section class="border-bottom border-dark p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img src="img/JuegaOMuere.jpg" alt="Error" class="imagenes">
+                    </div>
+
+                </div>
+
+                <div class="col-9 border-5 border-bottom border-end border-primary">
+                    <div>
+                        <h2>Sinopsis.</h2>
+                    </div>
+                    <div>
+                        <p>
+                            Mientras se entretenían con lo que parecía ser un juego inocente, un grupo de jóvenes
+                            invoca a un demonio, que posee a Marcus (Asa Butterfield), quien obliga a los demás a jugar
+                            juegos tradicionales como: Red Rover, linterna con fuego, Simon dice, con consecuencias
+                            mortales.
+                            Entre los sobrevivientes a los juegos, se encuentra Billie (Natalia Dyer)
+                            la hermana de Marcus, quien se enfrentará al demonio para intentar salvar a su hermano.
+                        </p>
+                    </div>
+
+                    <div class="py-3">
+                        <h5>Director</h5>
+
+                        <br>
+                    </div>
+
+                    <div class=" class=" py-3">
+                        <h5>Idioma</h5>
+                        <button class="btn" style="background-color:#CB1111; color: #fcfcfc;">SUBTITULAD</button>
+                        <button class="btn" style="background-color:#CB1111; color: #fcfcfc;">DOBLADA</button>
+                    </div>
+
+                    <div class="py-3">
+                        <h5>Disponible</h5>
+                        <p>Regular 2D</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--Titulo: Funcion perfecta.....-->
+    <section class="border-bottom border-dark p-5 text-center">
+        <div class="container">
+            <h1 style="color: #CB1111;">
+                La función perfecta para ti....
+            </h1>
+        </div>
+    </section>
+
+
+    <!--Selecionar cine, ciudad, fecha-->
+    <section class="border-bottom border-dark p-5">
+        <div class="container">
+            <div class="row">
+                <!--Filtro por Ciudad-->
+                <div class="col">
+                    <!-- Example single danger button -->
+                    <div class="btn-group">
+                        <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Por ciudad
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">lima</a></li>
+                            <li><a class="dropdown-item" href="#">Cajamarca</a></li>
+                            <li><a class="dropdown-item" href="#">Chiclayo</a></li>
+                            <li><a class="dropdown-item" href="#">Chimbote</a></li>
+                            <li><a class="dropdown-item" href="#">Piura</a></li>
+                            <li><a class="dropdown-item" href="#">Tarapoto</a></li>
+                            <li><a class="dropdown-item" href="#">Moyobamba</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="">Ver trailer</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!--Filtro por Cine-->
+                <div class="col">
+                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Por cine
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Cinerama Pacífico (Miraflores)</a></li>
+                        <li><a class="dropdown-item" href="#"> Cinerama Minka (Callao)</a></li>
+                        <li><a class="dropdown-item" href="#">Cinerama Chimbote (Chimbote)</a></li>
+                        <li><a class="dropdown-item" href="#">Cinerama Quinde (Piura)</a></li>
+                        <li><a class="dropdown-item" href="#">Cinerama Tarapoto (Tarapoto)</a></li>
+                        <li><a class="dropdown-item" href="#">Cinerama Megaplaza (Cajamarca)</a></li>
+                        <li><a class="dropdown-item" href="#">Cinerama Moyobamba (Moyobamba)</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="">Ver trailer</a></li>
+                    </ul>
+                </div>
+
+                <!--Filtro por Fecha-->
+                <div class="col">
+                    <div class="dropdown">
+                        <button class="dropdown-button" style="border: none; background-color: #fcfcfc;">Por fecha
+                            +</button>
+                        <div class="dropdown-menu" id="dateDropdown">
+                            <!-- Opciones de fecha se generarán aquí dinámicamente con JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Cines-->
+    <section class="container-fluid border p-5">
+        
+        <div class="container">
+
+            <!--Cine: 1-->
+            <div>
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                aria-controls="flush-collapseOne">
+                                Cinerama Pacífico (Miraflores)
+                            </button>
+                        </h2>
+
+                        <div id="flush-collapseOne" class="accordion-collapse collapse text-center"
+                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body text-dark">
+                                <a href="butacas.html">
+                                    <button class="btn" style="background-color: #CB1111; color: #fcfcfc;">
+                                        04:15 pm
+                                    </button>
+                                </a>
+                            </div>
+
+                            <div class="accordion-body text-dark">
+                                <a href="butacas.html">
+                                    <button class="btn" style="background-color: #CB1111; color: #fcfcfc;">
+                                        04:15 pm
+                                    </button>
+                                </a>
+                            </div>
+
+                            <div class="accordion-body text-dark">
+                                <a href="butacas.html">
+                                    <button class="btn" style="background-color: #CB1111; color: #fcfcfc;">
+                                        04:15 pm
+                                    </button>
+                                </a>
+                            </div>
+
+                            <div class="accordion-body text-dark">
+                                <a href="butacas.html">
+                                    <button class="btn" style="background-color: #CB1111; color: #fcfcfc;">
+                                        09:00 pm
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container">
+
+            <!--Cine: 1-->
+            <div>
+                <div class="accordion accordion-flush" id="accordionFlush1">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                aria-controls="flush-collapseOne">
+                                CINERAMA PACIFICO
+                            </button>
+                        </h2>
+
+                        <div id="flush-collapseOne" class="accordion-collapse collapse text-center"
+                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlush1">
+                            <div class="accordion-body text-dark">
+                                <a href="butacas.html">
+                                    <button class="btn" style="background-color: #CB1111; color: #fcfcfc;">
+                                        04:15 pm
+                                    </button>
+                                </a>
+                            </div>
+
+                            <div class="accordion-body text-dark">
+                                <a href="butacas.html">
+                                    <button class="btn" style="background-color: #CB1111; color: #fcfcfc;">
+                                        04:15 pm
+                                    </button>
+                                </a>
+                            </div>
+
+                            <div class="accordion-body text-dark">
+                                <a href="butacas.html">
+                                    <button class="btn" style="background-color: #CB1111; color: #fcfcfc;">
+                                        04:15 pm
+                                    </button>
+                                </a>
+                            </div>
+
+                            <div class="accordion-body text-dark">
+                                <a href="butacas.html">
+                                    <button class="btn" style="background-color: #CB1111; color: #fcfcfc;">
+                                        09:00 pm
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!--footer-->
+    <footer class="container-fluid p-5 bg-dark" style="color: #fcfcfc;">
+        <section class="container">
+            <section class="row">
+                <div class="col">
+
+                </div>
+                <div class="col">
+                    <h6>PROGRAMACIÓN</h6>
+                </div>
+                <div class="col">
+                    <h6>SOBRE CINEMARK</h6>
+                </div>
+                <div class="col">
+                    <h6>OTROS SERVICIOS</h6>
+                </div>
+                <div class="col">
+                    <h6>CONTACTO</h6>
+                </div>
+            </section>
+        </section>
+
+        <section class="container">
+            <section class="row">
+                <div class="col  text-center" style="color: #CB1111; font-size: 20px;">
+                    <br>
+                    <br>
+                    CINERAMA
+                </div>
+
+                <div class="col">
+                    <p style="font-size: 14px;">
+                        Cartelera
+                    </p>
+                    <p style="font-size: 14px;">
+                        Próximamente
+                    </p>
+                    <p style="font-size: 14px;">
+                        Preventa
+                    </p>
+                </div>
+
+                <div class="col">
+                    <p style="font-size: 14px;">
+                        Nosotros
+                    </p>
+                    <p style="font-size: 14px;">
+                        Salas y Formatos
+                    </p>
+                    <p style="font-size: 14px;">
+                        Términos y condiciones
+                    </p>
+                    <p style="font-size: 14px;">
+                        Política de Protección de Datos Personales
+                    </p>
+                </div>
+
+                <div class="col">
+                    <p style="font-size: 14px;">
+                        Eventos especiales
+                    </p>
+                    <p style="font-size: 14px;">
+                        Corporativo
+                    </p>
+                    <p style="font-size: 14px;">
+                        Publicidad
+                    </p>
+                </div>
+
+                <div class="col">
+                    <div class="col">
+                        <p style="font-size: 14px;">
+                            Escríbenos
+                        </p>
+                        <p style="font-size: 14px;">
+                            Formulario Devolución Compra en Línea
+                        </p>
+                        <p style="font-size: 14px;">
+                            Trabaja con nosotros
+                        </p>
+
+                        <p style="font-size: 14px;">
+                            Ver mi comprobante electrónico
+                        </p>
+
+                        <p style="font-size: 14px;">
+                            Libro de reclamaciones
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+
+    </footer>
+
+</body>
+
+<!--js-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<script>
+    // Obtener el elemento del desplegable
+    var dateDropdown = document.getElementById('dateDropdown');
+
+    // Obtener la fecha actual
+    var today = new Date();
+
+    // Generar opciones para hoy y los próximos 3 días
+    for (var i = 0; i < 4; i++) {
+        var optionDate = new Date();
+        optionDate.setDate(today.getDate() + i);
+
+        var optionText = optionDate.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' });
+
+        var optionElement = document.createElement('a');
+        optionElement.href = '#';
+        optionElement.textContent = optionText;
+        optionElement.classList.add('dropdown-item');
+
+        dateDropdown.appendChild(optionElement);
+    }
+</script>
+
+</html>

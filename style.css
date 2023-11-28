@@ -1,0 +1,187 @@
+/*PARTE 1: Estilos generales del body*/
+body{
+    background-color: #040404; 
+    color: aliceblue;
+}
+
+.centra-itms{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-section {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* 100% del viewport height */
+    overflow: hidden;
+}
+
+#background-video {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Para cubrir toda la sección */
+}
+
+/*CINERAMA*/
+.text-cinerama{
+    position: absolute; /*Esta propiedad establece el método de posicionamiento del elemento*/
+    color: #CB1111;
+    z-index: 1;
+    top: 12%; /*Establece la distancia desde la parte superior del elemento hasta su borde superior. */
+    left: 50%; /*Establece la distancia desde el borde izquierdo del elemento hasta su borde izquierdo.*/
+    transform: translate(-50%, -70%);/*Establece la distancia desde el borde izquierdo del elemento hasta su borde izquierdo.*/
+}
+
+/*Login*/
+.text-login{
+    position: absolute;
+    color: #040404;
+    z-index: 1;
+    top: 10%;
+    left: 100%;
+    transform: translate(-15%,-50%);
+}
+
+
+.text-container {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1; /* Asegura que el texto esté encima del video */
+}
+
+/*Parte 2:Primero contenedor*/
+
+
+/*Parte 3:Sedundo contenedor*/
+#videofondo{
+    position: initial;
+    right: 0;
+    width: 0;
+    min-width: 100%;
+    min-height: 100%;
+    
+    /*z-index: 1;  coloca el vido detras de otros elementos*/
+    object-fit: cover;
+}
+
+
+.contendio{
+    position: relative;
+   /* z-index: 1;*/
+    text-align: center;
+    padding: auto;
+}
+
+
+#chanel-logos{
+    position: relative;
+    overflow: hidden;
+
+}
+
+.thirddynamiccontainer{
+    background-color: #FBFBFF;
+    color: #09090A;
+}
+
+.logos-gray{
+    position: relative;
+    overflow: hidden;
+}
+
+.device-tv{
+    position: relative;
+    display: inline-block;
+}
+.img-fondo{
+    width: 494px;/*ancho*/
+    height: 309px;/*alto*/
+    z-index: 1; /*imagen por dejabo del video*/
+
+}
+
+
+.short-superpuesto{
+    position: absolute;
+    top: 3px;
+    left: 6px;
+    width: 97%;
+    height: 89%;
+    z-index: 2;
+    opacity: 0.7;
+}
+
+
+/*Cuarto Div*/
+
+.dynamiccontainerroom{
+   background-color: #09090A;
+   color: #FBFBFF;
+}
+
+/*cuarto div: contendio*/
+.panel-imag{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.short-fondo{
+    position: absolute;
+    top: 34px;
+    left: 45px;
+    width: 75%;
+    height: 45%;
+    z-index: 1;
+}
+.imag-transpuesta{
+    position:absolute;
+    top: 7px;
+    left: 83px;
+    height: 53%;
+    z-index: 2;
+}
+
+
+
+.imgQuinta{
+    position: relative;
+    max-width: 100%; /*limita el ancho de la imagen al 100%*/
+    height: auto; /*Ajusta automaticamente la altura para mantener la relacion*/
+    display: block; /*cambia la imagen a un elemento en bloque*/
+    margin: 0 auto; /*centra la imagen Horizontamnete dentro del div*/
+    left: -11px;
+    /*position: relative;
+    width: 845px;
+    height: 475px;
+    top: 0;
+    left: -11px;*/
+}
+
+.imgSexta{
+    position: relative;
+    max-width: 100%; /*limita el ancho de la imagen al 100%*/
+    height: auto; /*Ajusta automaticamente la altura para mantener la relacion*/
+    display: block; /*cambia la imagen a un elemento en bloque*/
+    margin: 0 auto; /*centra la imagen Horizontamnete dentro del div*/
+    left: 11px;
+}
+
+
+.imgSEptima{
+    position: relative;
+    max-width: 100%; /*limita el ancho de la imagen al 100%*/
+    height: auto; /*Ajusta automaticamente la altura para mantener la relacion*/
+    display: block; /*cambia la imagen a un elemento en bloque*/
+    margin: 0 auto; /*centra la imagen Horizontamnete dentro del div*/
+    left: -11px;
+}
+

@@ -1,0 +1,91 @@
+body {
+    background-color: #E5E7E9;
+}
+
+/*Quitar estilos de link*/
+.sin-estilo {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*Imagenes cines*/
+.PrimerImagen {
+    background-image: url('img/Pacifico-Lima.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.imagen-row {
+    display: flex;
+}
+
+.imagen-col {
+    flex: 1;
+    height: 200px;
+    /* Ajusta la altura según sea necesario */
+}
+
+
+/*Segunda imagen*/
+.SegundaImagen{
+    background-image: url('img/minka-lima-Callao.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/*Tercera*/
+.terceraImagen{
+    background-image: url('img/MegaPlaza-Cajamarca.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.CuartaImagen{
+    background-image: url('img/Cinerama-Chinbote.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.quintaImagen{
+    background-image: url('img/Tarapoto.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.sextaImagen{
+    background-image: url('img/CineraSol-Ica.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.septimoImagen{
+    background-image: url('img/Moyobanba.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.obtavoImagen{
+    background-image: url('img/cinerama-Cusco.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.novenoImagen{
+    background-image: url('img/Cinerama-Huacho.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.imagenes {
+    
+    max-width:40px;
+    /*limita el ancho de la imagen al 100%*/
+    height: auto;
+    /*Ajusta automaticamente la altura para mantener la relacion*/
+    display: block;
+    /*cambia la imagen a un elemento en bloque*/
+    margin: 0 auto;
+    /*centra la imagen Horizontamnete dentro del div*/
+    left: 8px;
+}

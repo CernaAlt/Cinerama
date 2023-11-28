@@ -1,0 +1,52 @@
+.imagenes {
+    
+    max-width:400px;
+    /*limita el ancho de la imagen al 100%*/
+    height: auto;
+    /*Ajusta automaticamente la altura para mantener la relacion*/
+    display: block;
+    /*cambia la imagen a un elemento en bloque*/
+    margin: 0 auto;
+    /*centra la imagen Horizontamnete dentro del div*/
+    left: 40px;
+}
+
+.Combo1{
+    background-image: url(img/combo02.webp);
+}
+
+.ComboF2C1{
+    background-image: url(img/combo03.webp);
+}
+
+.ComboF2C2{
+    background-image: url(img/combo03.webp);
+}
+
+.ComboF3C1{
+    background-image: url(img/combo04.webp);
+}
+
+.ComboF4C1{
+    background-image: url(img/combo05.webp);
+}
+
+.ComboF4C1{
+    background-image: url(img/combo05.webp);
+}
+
+.ComboF5C1{
+    background-image: url(img/combo06.webp);
+}
+
+.ComboF5C1{
+    background-image: url(img/combo06.webp);
+}
+
+.ComboF6C1{
+    background-image: url(img/combo07.webp);
+}
+
+.ComboF6C1{
+    background-image: url(img/combo07.webp);
+}

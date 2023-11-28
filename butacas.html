@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butacas</title>
+
+    <!--bootrstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <!--Icons font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--Personalizado-->
+    <link rel="stylesheet" href="estilos.css">
+
+
+    <!--Logica-->
+    <script src="logica/Butacas.js"></script>
+
+
+</head>
+
+<body>
+    <!--Header-->
+    <nav class="container-fluid bg-dark">
+        <div class="container d-flex justify-content-between align-items-center">
+            <!-- Añadido order-1 para cambiar el orden -->
+            <div class="order-1">
+
+                <a href="index.html">
+                    <button class="btn">
+                        <i class="fa-solid fa-reply" style="color: #EAEDED;"> Atras</i>
+                    </button>
+                </a>
+            </div>
+
+            <!--Titulo-->
+            <div class="opcionesCinerama order-2">
+                <ul class="navbar-nav d-flex flex-row">
+                    <li class="nav-item m-3">
+                        <h3 style="color:#EAEDED;">Selecciona tus butacas</h3>
+                    </li>
+                </ul>
+            </div>
+
+
+            <!--Registro-->
+            <div class="order-3">
+                <ul class="navbar-nav d-flex flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link" href="registrar.html">
+                            <i class="fa-solid fa-user-pen" style="color:#EAEDED">
+                            </i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--container-->
+    <section class="container-fluid">
+        <div class="container">
+            <section class="row">
+
+                <!--Datos Pelicula: Parte 1-->
+                <section class="container col-md-3 col-sm-12" style="background-color:#F4F6F6 ;">
+                    <div class="container d-flex flex-column justify-content-center">
+
+                        <!--Imagen-->
+                        <div class="container py-2 border-bottom">
+                            <!--Imagen-->
+                            <div class="row text-center d-none d-md-block">
+                                <div class="">
+                                    <img src="img/JuegaOMuere.jpg" alt="" class="imagenesCircular">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Textos-->
+                        <div class="container border-bottom d-none d-md-block">
+
+                            <!-- Titulo -->
+                            <div class="row mb-2">
+                                <div class="col-12">
+                                    <h3 style="color:rgb(22, 96, 224);">Juega o Mere</h3>
+                                </div>
+                            </div>
+
+                            <!-- Formato -->
+                            <div class="row mb-2">
+                                <div class="col-12">
+                                    <p style="color:rgb(22, 96, 224);">2D, Regular, Doblada</p>
+                                </div>
+                            </div>
+
+                            <!-- Sede -->
+                            <div class="row mb-2">
+                                <div class="col-12">
+                                    <h5 style="color:rgb(22, 96, 224);">Cajamarca, Mega Plaza</h5>
+                                </div>
+                            </div>
+
+                            <!-- Fecha -->
+                            <div class="row mb-2">
+                                <div class="col-12">
+                                    <i class="fa-regular fa-calendar-days fa-sm" style="color:rgb(22, 96, 224);"> 25,
+                                        nov, 2023</i>
+                                </div>
+                            </div>
+
+                            <!-- Hora -->
+                            <div class="row mb-2">
+                                <div class="col-12">
+                                    <P>
+                                        <i class="fa-regular fa-clock fa-sm" style="color:rgb(22, 96, 224);"> 04:15</i>
+                                    </P>
+                                </div>
+                            </div>
+
+                            <!-- Sala -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <p style="color:rgb(22, 96, 224);">SALA 1</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Controles Ocultos-->
+                        <div class="container border-bottom" style="display: none;">
+                            <!--Cantidad de botacas-->
+                            <div class="container border d-flex flex-column align-items-center justify-content-center">
+                                <div class="row p-3">Butacas: 1</div>
+                            </div>
+
+                            <!--Combos-->
+                            <div class="container border d-flex flex-column align-items-center justify-content-center">
+                                <div class="row p-3">Comida</div>
+                            </div>
+
+
+                            <!--Section Precio-->
+                            <div class="container border d-flex flex-column align-items-center justify-content-center">
+                                <div class="row p-3">Imagen</div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!--Datos Refistro Butacas: Parte 2-->
+                <section class="container-fluid col-md-9 col-sm-12" style="background-color:#EAEDED;">
+
+                    <!--Seccion Pasos: Iconos-->
+                    <div class="container border-bottom border-dark ">
+                        <div class="row p-4">
+                            <div class="col ">
+                                <i class="fa-solid fa-couch fa-xl" style="color:rgb(22, 96, 224) ;">
+                                    <i class="fa-solid fa-arrow-right fa-2xs" style="color:rgb(22, 96, 224);"></i>
+                                </i>
+                            </div>
+
+                            <div class="col">
+                                <i class="fa-solid fa-hand-holding-dollar fa-xl" style="color:rgb(22, 96, 224);">
+                                    <i class="fa-solid fa-arrow-right fa-2xs" style="color:rgb(22, 96, 224);"></i>
+                                </i>
+                            </div>
+
+                            <div class="col">
+                                <i class="fa-solid fa-mug-hot fa-xl" style="color: rgb(22, 96, 224);">
+                                    <i class="fa-solid fa-arrow-right fa-2xs" style="color: rgb(22, 96, 224);"></i>
+                                </i>
+                            </div>
+
+                            <div class="col">
+                                <i class="fa-regular fa-credit-card fa-xl" style="color:rgb(22, 96, 224);">
+                                    <i class="fa-solid fa-arrow-right fa-2xs" style="color:rgb(22, 96, 224)"></i>
+                                </i>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!--PASO 1: Seleccion de Butacas-->
+                    <div class="container p-4" style="display: block;" id="Formulario1">
+                        <div class="row border">
+                            <div class="text-center" style="font-size: 30px; color:#0f0f0f;">
+                                Pantalla
+                            </div>
+                        </div>
+
+                        <!--Asientos-->
+                        <div class="container p-4">
+                            <!--Fila: 1-->
+                            <div class="row">
+                                <div class="col-1">
+
+                                </div>
+                                <div class="col-3">
+                                    <div class="row">
+                                    </div>
+                                </div>
+
+                                <div class="col-5">
+
+                                </div>
+
+
+                                <div class="col-2">
+                                    <div class="row">
+                                    </div>
+                                </div>
+
+                                <div class="col-1">
+                                </div>
+                            </div>
+
+                            <!--Fila: 2-->
+                            <div class="row">
+                                <div class="col-1">
+                                    <h4>A</h4>
+                                </div>
+                                <div class="col-3">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-5">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-2">
+                                    <div class="row">
+                                    </div>
+                                </div>
+
+                                <div class="col-1">
+                                    <h4>A</h4>
+                                </div>
+                            </div>
+
+                            <!--Fila: 3-->
+                            <div class="row">
+                                <div class="col-1">
+                                    <h4>B</h4>
+                                </div>
+                                <div class="col-3">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-5">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-2">
+                                    <div class="row">
+                                    </div>
+                                </div>
+
+                                <div class="col-1">
+                                    <h4>B</h4>
+                                </div>
+                            </div>
+
+                            <!--Fila: 4-->
+                            <div class="row">
+                                <div class="col-1">
+                                    <h4>C</h4>
+                                </div>
+                                <div class="col-3">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-5">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-2">
+                                    <div class="row">
+                                    </div>
+                                </div>
+
+                                <div class="col-1">
+                                    <h4>C</h4>
+                                </div>
+                            </div>
+
+                            <!--Fila: 5-->
+                            <div class="row">
+                                <div class="col-1">
+                                    <h4>D</h4>
+                                </div>
+                                <div class="col-3">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-5">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-2">
+                                    <div class="row">
+                                    </div>
+                                </div>
+
+                                <div class="col-1">
+                                    <h4>D</h4>
+                                </div>
+                            </div>
+
+                            <!--Fila: 6-->
+                            <div class="row">
+                                <div class="col-1">
+                                    <h4>F</h4>
+                                </div>
+                                <div class="col-3">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-5">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-2">
+                                    <div class="row">
+                                    </div>
+                                </div>
+
+                                <div class="col-1">
+                                    <h4>F</h4>
+                                </div>
+                            </div>
+
+                            <!--Fila: 7-->
+                            <div class="row">
+                                <div class="col-1">
+                                    <h4>E</h4>
+                                </div>
+                                <div class="col-3">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-5">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-2">
+                                    <div class="row">
+                                    </div>
+                                </div>
+
+                                <div class="col-1">
+                                    <h4>E</h4>
+                                </div>
+                            </div>
+
+                            <!--Fila: 8-->
+                            <div class="row">
+                                <div class="col-1">
+                                    <h4>G</h4>
+                                </div>
+                                <div class="col-3">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-5">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-2">
+                                    <div class="row">
+                                    </div>
+                                </div>
+
+                                <div class="col-1">
+                                    <h4>G</h4>
+                                </div>
+                            </div>
+
+                            <!--Fila: 9-->
+                            <div class="row">
+                                <div class="col-1">
+                                    <h4>H</h4>
+                                </div>
+                                <div class="col-3">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-5">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-2">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-1">
+                                    <h4>H</h4>
+                                </div>
+
+                            </div>
+
+                            <!--Fila: 10-->
+                            <div class="row">
+                                <div class="col-1">
+                                    <h4>I</h4>
+                                </div>
+                                <div class="col-3">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-5">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-2">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-1">
+                                    <h4>I</h4>
+                                </div>
+                            </div>
+
+                            <!--Fila: 11-->
+                            <div class="row">
+                                <div class="col-1">
+                                    <h4>J</h4>
+                                </div>
+                                <div class="col-3">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-5">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-2">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-1">
+                                    <h4>J</h4>
+                                </div>
+                            </div>
+
+                            <!--Fila: 12-->
+                            <div class="row">
+                                <div class="col-1">
+                                    <h4>K</h4>
+                                </div>
+                                <div class="col-3">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-5">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-2">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <i class="fa-regular fa-circle fa-xl" style="color: #0c0d0d;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-1">
+                                    <h4>K</h4>
+                                </div>
+
+                            </div>
+
+                            <!--Fila: 13-->
+                            <div class="row p-4 border-bottom border-dark">
+
+                                <div class="col">
+                                    <i class="fa-regular fa-circle fa-xs" style="color: #0c0d0d;"> Disponible</i>
+                                </div>
+
+                                <div class="col">
+                                    <div class="col">
+                                        <i class="fa-solid fa-circle fa-xs" style="color:#CB1111"></i>
+                                        <i class="fa-solid fa-xs" style="color: #0c0d0d;"> Ocupado</i>
+                                    </div>
+                                    <div class="col">
+                                        <i class="fa-solid fa-circle fa-xs" style="color: #0c0d0d;"></i>
+                                        <i class="fa-solid fa-xs" style="color: #0c0d0d;"> Selecionado</i>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <i class="fa-solid fa-wheelchair fa-xs" style="color: #0f0f0f;"> Silla ruedas</i>
+                                </div>
+                            </div>
+
+                            <!--Fila: 14-->
+                            <div class="row text-center border-bottom border-dark p-4">
+
+                                <div class="col">
+                                    <p>
+                                        Todas nuestras salas cuentan con espacios reservados para sillas de ruedas
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!--Fila: 15-->
+                            <div class="container row p-3 text-center">
+
+                                <div class="col-7">
+                                    <h3>Butacas sleccionadas:</h3>
+                                </div>
+
+                                <!--Boton-->
+                                <div class="col">
+                                    <button class="btn" style="background-color: #CB1111;">
+
+                                        <i class="fa-solid fa-sm" style="color:#ebeef4"
+                                            onclick="detalleEntrada()">CONTINUAR</i>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!--Paso:2 Detalles de entrada-->
+                    <div class="container" style="display: none;" id="Formulario2">
+
+                        <!--Texto-->
+                        <div class="text-center">
+                            <h4>Detalles de entrada</h4>
+                            <p>
+                                ¡Combinalas como quieres! Recuerda que deben Coincidir con
+                                con el numero de butacas
+                            </p>
+                        </div>
+
+                        <!--Opciones de entradas-->
+                        <div class="container">
+
+                            <div class="row">
+                                <!--Opciones-->
+                                <div class="col">
+                                    <div class="py-2">
+                                        Entrada General
+                                    </div>
+
+                                    <div class="py-2">
+                                        Mayores de 60 años
+
+                                    </div>
+
+                                    <div class="py-2">
+                                        Mayores de 60 años
+                                    </div>
+
+                                </div>
+
+                                <!--Beneficos-->
+                                <div class="col p-5">
+
+                                    <div class="text-center">
+                                        <i class="fa-regular fa-face-sad-tear fa-lg" style="color: #2753a0;"></i>
+                                    </div>
+
+                                    <div class="text-center">
+                                        No tines Beneficios disponibles
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+                        <!--Botones de Continuar Y volver-->
+                        <div class="container text-center">
+
+
+                            <a onclick="Paso2()" target="_blank" rel="noopener noreferrer">
+                                <button class="btn" style="background-color: #CB1111; color: #EAEDED;">
+                                    Continuar
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!--Paso: 3 Combos para Comer-->
+                    <section class="container p-5 border" style="display: none;" id="Formulario3">
+                        <h1>Comidad</h1>
+
+                        <!--Botones de Continuar Y volver-->
+                        <div class="container text-center">
+
+                            <button class="btn" onclick="Paso3()" style="background-color: #CB1111; color: #EAEDED;">
+                                Continuar
+                            </button>
+
+                        </div>
+                    </section>
+
+                    <!--Formas de pago-->
+                    <div class="container p-4" style="background-color: #f5f5f4;display: none;" id="Formulario4">
+
+                        <div class="container text-center">
+                            <h4>Elije tu forma de pago</h4>
+                        </div>
+
+                        <!--Formulario de pago-->
+                        <div>
+                            <form>
+                                <!--Nombre-->
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Nombre Completo</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp">
+                                    <div id="emailHelp" class="form-text">
+                                    </div>
+                                </div>
+
+                                <!--Correo-->
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Correo Electrónico</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1">
+                                </div>
+
+                                <!--Metodos de pago Tarjetas-->
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1"
+                                        onchange="mostrarOpciones()" style="background-color: #CB1111;">
+
+                                    <div class="border border-dark container">
+                                        <!--Titulo, Imagenes de tarjetas de credito-->
+                                        <label class="form-check-label" for="exampleCheck1">
+                                            <div class="row">
+
+                                                <!--Titulo-->
+                                                <div class="col p-1">
+                                                    <div class="container">
+                                                        <h6>
+                                                            Tarjeta de credito O Débito
+                                                        </h6>
+                                                    </div>
+
+                                                </div>
+
+                                                <!--Imgenes de las tarjetas-->
+                                                <div class="col p-1">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <img src="img/visa.png" alt="" class="imagenes">
+                                                        </div>
+                                                        <div class="col">
+                                                            <img src="img-2/tarjeta.png" alt="" class="imagenes">
+                                                        </div>
+                                                        <div class="col">
+                                                            <img src="img/amex.png" alt="" class="imagenes">
+                                                        </div>
+                                                        <div class="col">
+                                                            <img src="" alt="" class="imagenes">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+
+                                        <!--Datos Tarjeta-->
+                                        <section id="datosTarjeta" style="display: none;">
+                                            <form>
+                                                <!--Numero de tarjeta-->
+                                                <div class="mb-3">
+                                                    <div class="input-group">
+                                                        <input type="password" class="form-control"
+                                                            id="exampleInputPassword1" placeholder="Número de tarjeta">
+
+                                                    </div>
+                                                </div>
+
+                                                <!--Tipo Tarjeta-->
+                                                <div class="mb-3">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="flush-headingOne">
+                                                            <button class="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#flush-collapseOne"
+                                                                aria-expanded="false" aria-controls="flush-collapseOne">
+                                                                Tipo de Tarjeta
+                                                            </button>
+                                                        </h2>
+                                                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                                            aria-labelledby="flush-headingOne"
+                                                            data-bs-parent="#accordionFlushExample">
+                                                            <div class="accordion-body text-dark">
+                                                                Visa
+                                                            </div>
+                                                            <div class="accordion-body text-dark">
+                                                                Mastercat
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Mes -->
+                                                <div class="mb-3">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="flush-headingTwo">
+                                                            <button class="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#flush-collapseTwo"
+                                                                aria-expanded="false" aria-controls="flush-collapseTwo">
+                                                                Mes
+                                                            </button>
+                                                        </h2>
+                                                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                                            aria-labelledby="flush-headingTwo"
+                                                            data-bs-parent="#accordionFlushExample">
+                                                            <div class="accordion-body text-dark">
+                                                                Diciembre
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!--Año-->
+                                                <div class="mb-3">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="flush-headingThree">
+                                                            <button class="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#flush-collapseThree"
+                                                                aria-expanded="false"
+                                                                aria-controls="flush-collapseThree">
+                                                                Año
+                                                            </button>
+                                                        </h2>
+
+                                                        <div id="flush-collapseThree"
+                                                            class="accordion-collapse collapse"
+                                                            aria-labelledby="flush-headingThree"
+                                                            data-bs-parent="#accordionFlushExample">
+
+
+
+                                                            <div class="accordion-body text-dark">
+                                                                lista los años
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!--CLAVE-->
+                                                <div class="mb-3">
+                                                    <div class="input-group">
+                                                        <input type="password" class="form-control"
+                                                            id="exampleInputPassword1" placeholder="CVV">
+
+                                                    </div>
+                                                </div>
+
+                                                <!--Tipo Docmuento-->
+                                                <div class="mb-3">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="flush-headingfour">
+                                                            <button class="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#flush-collapsefour"
+                                                                aria-expanded="false"
+                                                                aria-controls="flush-collapsefour">
+                                                                Tipo de documento
+                                                            </button>
+                                                        </h2>
+                                                        <div id="flush-collapsefour" class="accordion-collapse collapse"
+                                                            aria-labelledby="flush-headingfour"
+                                                            data-bs-parent="#accordionFlushExample">
+                                                            <div class="accordion-body text-dark">
+                                                                DNI
+                                                            </div>
+                                                            <div class="accordion-body text-dark">
+                                                                Pasaporte
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!--Numero de documento-->
+                                                <div class="mb-3">
+                                                    <div class="input-group">
+                                                        <input type="password" class="form-control"
+                                                            id="exampleInputPassword1"
+                                                            placeholder="Número de documento">
+                                                        <!-- Puedes agregar el icono de cerrar o cualquier otro elemento aquí -->
+
+                                                    </div>
+                                                </div>
+
+                                                <!--Texto Informativos-->
+                                                <div style="font-size: 12px;">
+                                                    <p>
+                                                        El cobro de las transacción se realizara en Soles. Si la cuenta
+                                                        de
+                                                        tu tarjeta es en Dólares
+                                                        ,el tipo de cambio utilizado sera de tu banco.
+                                                    </p>
+
+                                                    <p class="py-1">
+                                                    <div>
+                                                        <a href="http://" style="text-decoration: none;">
+                                                            **No se hace cambios ni devoluciones
+
+                                                        </a>
+
+                                                    </div>
+                                                    <div>
+                                                        <a href="http://" style="text-decoration: none;">
+                                                            **No se hace cambios ni devoluciones
+                                                        </a>
+
+                                                    </div>
+
+
+                                                    </p>
+
+
+                                                </div>
+                                            </form>
+                                        </section>
+                                    </div>
+
+                                </div>
+
+                                <!--Metodos de pago Billeteras Electronicas-->
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck2"
+                                        style="background-color: #CB1111;" onchange="opcionesBilleteras()">
+                                    <div class="border border-dark">
+
+                                        <!--Titulo, Imagenes de tarjetas de Billeteras electronicas-->
+                                        <label class="form-check-label" for="exampleCheck2">
+                                            <div class="row">
+
+                                                <!--Titulo-->
+                                                <div class="col p-1">
+                                                    <div class="container">
+                                                        <h6>
+                                                            Billeteras Electronicas
+                                                        </h6>
+                                                    </div>
+
+                                                </div>
+
+                                                <!--Imgenes de las tarjetas-->
+                                                <div class="col p-1">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <img src="img/yape.png" alt="" class="imagenes">
+                                                        </div>
+                                                        <div class="col">
+                                                            <img src="img/plin.png" alt="" class="imagenes">
+                                                        </div>
+                                                        <div class="col">
+                                                            <img src="img/Tunki.png" alt="" class="imagenes">
+                                                        </div>
+                                                        <div class="col">
+                                                            <img src="" alt="" class="imagenes">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+
+                                        <!--Datos de billetreras online-->
+                                        <section id="datosBilletera" style="display: none;">
+
+                                            <!--Texto-->
+                                            <div class="container">
+                                                <div>
+                                                    <p>
+                                                        Elija alguna de las opciones de pago
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <!--Metodo de pago-->
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <img src="img/yape.png" alt="" class="imagenes">
+                                                    </div>
+                                                    <div class="col">
+                                                        <img src="img/plin.png" alt="" class="imagenes">
+
+                                                    </div>
+                                                    <div class="col">
+                                                        <img src="img/Tunki.png" alt="" class="imagenes">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!--Texto-->
+                                            <div class="container" style="font-size: 12px;">
+                                                <div>
+                                                    <p>
+                                                        *No se hace Cambios ni devoluciones
+                                                        <br>
+                                                        *Toda la informacion de pago es segura
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="container">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                                            style="background-color: #CB1111;">
+                                        <label class="form-check-label" for="flexCheckDefault" style="font-size: 12px;">
+                                            Aceptar los terminos y condiciones y politicas de prevacidad
+                                        </label>
+                                    </div>
+
+                                </div>
+
+                                <!--Boton de confirmar Pago-->
+                                <div class="text-center py-2">
+
+                                    <!-- modal: Boton de Confirmacion Pago -->
+                                    <button type="button" class="btn" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"
+                                        style="background-color: #CB1111; color: #ebeef4;">
+                                        Realizar compra
+                                    </button>
+
+                                    <!-- Modal: Venta Emergente -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Detalles</h5>
+
+                                                    <!--Boton Cancelar-->
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close">
+                                                    </button>
+                                                </div>
+
+                                                <div class="modal-body" style="display: block;">
+                                                    <!--Datos de compra-->
+                                                </div>
+
+                                                <div class="modal-footer">
+
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">
+                                                        Resumen de Compra
+                                                    </button>
+
+                                                    <a href="cartelera.html">
+                                                        <button type="button" class="btn btn-primary">
+                                                            Vover a Cartelera
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </section>
+        </div>
+    </section>
+
+    <!--Footer -->
+    <footer class="bottom-footer fixed-bottom text-center p-1 bg-dark" style="color: #EAEDED;">
+        <!-- Contenido del pie de página inferior -->
+        CINERAMA TODOS LOS DERECHOS RESERVADOS
+    </footer>
+</body>
+<!--boostrstrap js-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+
+
+</html>

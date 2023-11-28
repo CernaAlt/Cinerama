@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cines</title>
+
+    <!--Boostrtrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!--Icons font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--Perosnalizado-->
+    <link rel="stylesheet" href="cines.css">
+
+    <!--logica-->
+    <script src="scrip.js"></script>
+</head>
+
+<body>
+    <!--Header resposive-->
+    <nav class="container-fluid bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-md order-md-1 mb-4 text-center">
+                    <!-- Utiliza la clase col-md para especificar el tamaño en dispositivos medianos y grandes -->
+                    <a href="index.html">
+                        <button class="btn">
+                            <h1 style="color: #CB1111;">CINERAMA</h1>
+                        </button>
+                    </a>
+                </div>
+
+                <div class="col-md opcionesCinerama order-md-2 text-center mb-3">
+                    <ul class="navbar-nav d-md-flex flex-md-row flex-sm-column">
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="cartelera.html">
+                                <button class="btn" style="color: #fcfcfc;">Peliculas</button>
+                            </a>
+                        </li>
+
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="#">
+                                <button class="btn" style="color: #fcfcfc;">Promociones</button>
+                            </a>
+                        </li>
+
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="alimentos.html">
+                                <button class="btn" style="color: #fcfcfc;">Alimentos</button>
+                            </a>
+                        </li>
+
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="cines.html">
+                                <button class="btn" style="color: #fcfcfc;">Cines</button>
+                            </a>
+                        </li>
+
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="#">
+                                <button class="btn" style="color: #fcfcfc;">Contactanos</button>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md order-md-3 text-center">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link my-2" href="registrar.html">
+                                <i class="fa-solid fa-user-pen" style="color: #fcfcfc;"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="#">
+                                <div class="order-3">
+                                    <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+                                        <i class="fas fa-universal-access" style="color: #fcfcfc;"></i> accesibilidad
+                                    </button>
+                                </div>
+
+                                <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false"
+                                    tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                                    <div class="offcanvas-header">
+                                        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Configuración</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item">
+                                                <label for="fontSizeRange">Tamaño de letra:</label>
+                                                <input type="range" class="form-range" id="fontSizeRange">
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" role="switch"
+                                                        id="colorBlindSwitch">
+                                                    <label class="form-check-label" for="colorBlindSwitch">Activar
+                                                        filtro daltonico</label>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" role="switch"
+                                                        id="darkModeSwitch">
+                                                    <label class="form-check-label" for="darkModeSwitch">
+                                                        <span id="darkModeText">Modo oscuro</span>
+                                                        <span id="lightModeText" style="display: none;">Modo
+                                                            claro</span>
+                                                    </label>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" role="switch"
+                                                        id="flexSwitchCheckDefault">
+                                                    <label class="form-check-label"
+                                                        for="flexSwitchCheckDefault">Resaltar botones</label>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <label for="languageSelect">Seleccionar idioma:</label>
+                                                <select class="form-select" id="languageSelect">
+                                                    <option value="es">Español</option>
+                                                    <option value="en">English</option>
+                                                    <!-- Agrega más opciones de idioma según sea necesario -->
+                                                </select>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+    </nav>
+
+    <!--Cine-->
+    <section class="container p-3 text-center">
+        <div>
+            <h3 class="text-dark">TODOS NUESTROS CINES</h3>
+        </div>
+    </section>
+
+    <section class="container">
+        <!--Listado de cines: 1-->
+        <section class="container-fluid p-3" style="background-color: #F8F9F9;">
+            <section class="container">
+                <!--Fila 1-->
+                <div class="row">
+                    <div class="col-9">
+                        <!--Imagen 1: -->
+                        <div class="row imagen-row border">
+                            <div class="col PrimerImagen imagen-col"></div>
+
+                            <div class="col imagen-col">
+                                <div class="row">
+                                    <div class="text-center">
+                                        <h3 style="color: #CB1111;">CINERAMA PACIFICO</h3>
+                                    </div>
+                                    <div class="text-center border-top p-5">
+                                        <a href="http://" class="sin-estilo">
+                                            <p style="font-size: 10px; ">
+                                                AV JOSE PARDO 121 MIRAFLORES - LIMA - LIMA
+                                            </p>
+                                        </a>
+                                    </div>
+
+                                    <div class="text-center border p-1" style="background-color: #CB1111;">
+                                        <a href="http://" class="sin-estilo">
+                                            +info
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Seccion de filtros-->
+                    <div class="col d-none d-md-block">
+                        <div class="container">
+                            <div class="row p-1" style="color: #CB1111;">
+                                Filtrado Por:
+                            </div>
+
+                            <div class="row p-1">
+                                <button class="btn btn-dark">
+                                    2D
+                                </button>
+                            </div>
+
+                            <div class="row p-1">
+                                <button class="btn btn-dark">
+                                    3D
+                                </button>
+                            </div>
+
+                            <div class="row p-1">
+                                <button class="btn btn-dark">
+                                    4DX
+                                </button>
+                            </div>
+
+
+                            <div class="row p-1">
+                                <button class="btn btn-dark">
+                                    IMAX
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!--Listado de cines: 2-->
+        <section class="container-fluid p-3" style="background-color: #F8F9F9;">
+            <section class="container">
+                <!--Fila 1-->
+                <div class="row">
+                    <div class="col-9">
+                        <!--Imagen 1: -->
+                        <div class="row imagen-row">
+                            <div class="col SegundaImagen imagen-col"></div>
+
+                            <div class="col imagen-col">
+                                <div class="row">
+                                    <div class="text-center border-top border-end">
+                                        <h3 style="color: #CB1111;">CINERAMA MINKA</h3>
+                                    </div>
+                                    <div class="text-center border p-5">
+                                        <a href="http://" class="sin-estilo">
+                                            <p style="font-size: 10px; ">
+                                                AV ARGENTINA 3093 CC MINKA 2DO NIVEL CALLAO - CALLAO - CALLAO
+                                            </p>
+                                        </a>
+                                    </div>
+
+                                    <div class="text-center border" style="background-color: #CB1111;">
+                                        <a href="http://" class="sin-estilo">
+                                            +info
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!--Listado de cines: 3-->
+        <section class="container-fluid p-3" style="background-color: #F8F9F9;">
+            <section class="container">
+                <!--Fila 1-->
+                <div class="row">
+                    <div class="col-9">
+                        <!--Imagen 1: -->
+                        <div class="row imagen-row border">
+                            <div class="col terceraImagen imagen-col"></div>
+
+                            <div class="col imagen-col">
+                                <div class="row">
+                                    <div class="text-center border">
+                                        <h3 style="color: #CB1111;">CINERAMA QUINDE</h3>
+                                    </div>
+                                    <div class="text-center border p-5">
+                                        <a href="http://" class="sin-estilo">
+                                            <p style="font-size: 10px; ">
+                                                AV LOS MAESTROS S/N CC EL QUINDE
+                                            </p>
+                                        </a>
+                                    </div>
+
+                                    <div class="text-center border" style="background-color: #CB1111;">
+                                        <a href="http://" class="sin-estilo">
+                                            +info
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!--Boton para mostrar mas-->
+        <section class="container-fluid p-2" style="background-color: #F8F9F9;">
+            <div class="container text-center">
+                <button onclick="mostrarCines()" class="btn" style="background-color: #CB1111;">Ver Más</button>
+            </div>
+        </section>
+
+
+        <!--Listado de cines: 4-->
+        <section id="" class="container-fluid p-3 cines-container" style="background-color: #F8F9F9; display: none;">
+            <section class="container">
+                <!--Fila 1-->
+                <div class="row">
+                    <div class="col-9">
+                        <!--Imagen 1: -->
+                        <div class="row imagen-row">
+                            <div class="col CuartaImagen" style=" height: 215px;"></div>
+
+                            <div class="col border imagen-col">
+                                <div class="row">
+                                    <div class="text-center border">
+                                        <h3 style="color: #CB1111;">
+                                            CINERAMA CHIMBOTE</h3>
+                                    </div>
+                                    <div class="text-center border p-5">
+                                        <a href="http://" class="sin-estilo">
+                                            <p style="font-size: 10px; ">
+                                                AV. V. RAÚL H. DE LA TORRE MZA. B MUCHO. 1er SECTOR SAN P ANCASH CAMPO
+                                                FERIA
+                                                SANTA CHIMBOTE
+                                            </p>
+                                        </a>
+                                    </div>
+
+                                    <div class="text-center border" style="background-color: #CB1111;">
+                                        <a href="http://" class="sin-estilo">
+                                            +info
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!--Listado de cines: 5-->
+        <section id="" class="container-fluid p-3 cines-container" style="background-color: #F8F9F9; display: none; ">
+            <section class="container">
+                <!--Fila 1-->
+                <div class="row">
+                    <div class="col-9">
+                        <!--Imagen 1: -->
+                        <div class="row imagen-row">
+                            <div class="col quintaImagen imagen-col"></div>
+
+                            <div class="col border imagen-col">
+                                <div class="row">
+                                    <div class="text-center border">
+                                        <h3 style="color: #CB1111;">
+                                            CINERAMA TARAPOTO
+                                        </h3>
+                                    </div>
+                                    <div class="text-center border p-5">
+                                        <a href="http://" class="sin-estilo">
+                                            <p style="font-size: 10px; ">
+                                                AV ALFONSO UGARTE 1360 SAN MARTIN - SAN MARTIN - TARAPOTO
+                                            </p>
+                                        </a>
+                                    </div>
+
+                                    <div class="text-center border" style="background-color: #CB1111;">
+                                        <a href="http://" class="sin-estilo">
+                                            +info
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!--Listado de cines: 6-->
+        <section id="" class="container-fluid p-3 cines-container" style="background-color: #F8F9F9; display: none; ">
+            <section class="container">
+                <!--Fila 1-->
+                <div class="row">
+                    <div class="col-9">
+                        <!--Imagen 1: -->
+                        <div class="row imagen-row">
+                            <div class="col sextaImagen imagen-col"></div>
+                            <div class="col border imagen-col">
+                                <div class="row">
+                                    <div class="text-center border">
+                                        <h3 style="color: #CB1111;">
+                                            CINERAMA SOL
+                                        </h3>
+                                    </div>
+                                    <div class="text-center border p-5">
+                                        <a href="http://" class="sin-estilo">
+                                            <p style="font-size: 10px; ">
+                                                AV SAN MARTIN 727 CC PLAZA DEL SOL ICA - ICA - ICA
+                                            </p>
+                                        </a>
+                                    </div>
+
+                                    <div class="text-center border" style="background-color: #CB1111;">
+                                        <a href="http://" class="sin-estilo">
+                                            +info
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!--Listado de cines: 7-->
+        <section id="" class="container-fluid p-3 cines-container" style="background-color: #F8F9F9; display: none;">
+            <section class="container">
+                <!--Fila 1-->
+                <div class="row">
+                    <div class="col-9">
+                        <!--Imagen 1: -->
+                        <div class="row imagen-row">
+                            <div class="col septimoImagen imagen-col"></div>
+
+                            <div class="col border imagen-col">
+                                <div class="row">
+                                    <div class="text-center border">
+                                        <h3 style="color: #CB1111;">
+                                            CINERAMA MOYOBAMBA
+                                        </h3>
+                                    </div>
+                                    <div class="text-center border p-5">
+                                        <a href="http://" class="sin-estilo">
+                                            <p style="font-size: 10px; ">
+                                                JR MANUEL DEL AGUILA 542 MOYOBAMBA
+                                            </p>
+                                        </a>
+                                    </div>
+
+                                    <div class="text-center border" style="background-color: #CB1111;">
+                                        <a href="http://" class="sin-estilo">
+                                            +info
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!--Listado de cines: 8-->
+        <section id="" class="container-fluid p-3 cines-container" style="background-color: #F8F9F9; display: none;">
+            <section class="container border-dark">
+                <!--Fila 1-->
+                <div class="row">
+                    <div class="col-9">
+                        <!--Imagen 1: -->
+                        <div class="row imagen-row">
+                            <div class="col obtavoImagen imagen-col"></div>
+
+                            <div class="col border imagen-col">
+                                <div class="row">
+                                    <div class="text-center border">
+                                        <h3 style="color: #CB1111;">
+                                            CINERAMA CUSCO
+                                        </h3>
+                                    </div>
+                                    <div class="text-center border p-5">
+                                        <a href="http://" class="sin-estilo">
+                                            <p style="font-size: 10px; ">
+                                                CALLE CRUZ VERDE 347 CC IMPERIAL ´PLAZA CUSCO - CUSCO - CUSCO
+                                            </p>
+                                        </a>
+                                    </div>
+
+                                    <div class="text-center border" style="background-color: #CB1111;">
+                                        <a href="http://" class="sin-estilo">
+                                            +info
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!--Listado de cines: 9-->
+        <section id="" class="container-fluid p-3 cines-container" style="background-color: #F8F9F9; display: none;">
+            <section class="container">
+                <!--Fila 1-->
+                <div class="row">
+                    <div class="col-9">
+                        <!--Imagen 1: -->
+                        <div class="row imagen-row">
+                            <div class="col novenoImagen imagen-col"></div>
+
+                            <div class="col imagen-col">
+                                <div class="row">
+                                    <div class="text-center border">
+                                        <h3 style="color: #CB1111;">
+                                            CINERAMA HUACHO
+                                        </h3>
+                                    </div>
+                                    <div class="text-center border p-5">
+                                        <a href="http://" class="sin-estilo">
+                                            <p style="font-size: 10px; ">
+                                                COLON 601 CC PLAZA DEL SOL 2DO NIVEL
+                                            </p>
+                                        </a>
+                                    </div>
+
+                                    <div class="text-center border" style="background-color: #CB1111;">
+                                        <a href="http://" class="sin-estilo">
+                                            +info
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+
+        <!--Boton para Ocultar los cines-->
+        <section class="container-fluid mb-2 cines-container" style="background-color: #F8F9F9; display: none;">
+            <div class="container text-center">
+                <button onclick="OcultarCines()" class="btn" style="background-color: #CB1111;">Ocultar</button>
+            </div>
+        </section>
+
+
+        <!--Redes sociales-->
+        <section class="container-fluid cines-container p-5">
+            <div class="container border-dark">
+                <div class="row">
+                    <div class="col">
+                        <img src="img/Icon01.webp" alt="" class="imagenes">
+                    </div>
+                    <div class="col">
+                        <img src="img/icon02.webp" alt="" class="imagenes">
+
+                    </div>
+                    <div class="col">
+                        <img src="img/icon03.webp" alt="" class="imagenes">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </section>
+
+
+    <!--footer-->
+    <footer class="container-fluid p-5 bg-dark text-white">
+        <section class="container">
+            <section class="row">
+                <div class="col">
+
+                </div>
+                <div class="col">
+                    <h6>PROGRAMACIÓN</h6>
+                </div>
+                <div class="col">
+                    <h6>SOBRE CINEMARK</h6>
+                </div>
+                <div class="col">
+                    <h6>OTROS SERVICIOS</h6>
+                </div>
+                <div class="col">
+                    <h6>CONTACTO</h6>
+                </div>
+            </section>
+        </section>
+
+        <section class="container">
+            <section class="row">
+                <div class="col  text-center" style="color: #CB1111; font-size: 20px;">
+                    <br>
+                    <br>
+                    CINERAMA
+                </div>
+
+                <div class="col">
+                    <p style="font-size: 14px;">
+                        Cartelera
+                    </p>
+                    <p style="font-size: 14px;">
+                        Próximamente
+                    </p>
+                    <p style="font-size: 14px;">
+                        Preventa
+                    </p>
+                </div>
+
+                <div class="col">
+                    <p style="font-size: 14px;">
+                        Nosotros
+                    </p>
+                    <p style="font-size: 14px;">
+                        Salas y Formatos
+                    </p>
+                    <p style="font-size: 14px;">
+                        Términos y condiciones
+                    </p>
+                    <p style="font-size: 14px;">
+                        Política de Protección de Datos Personales
+                    </p>
+                </div>
+
+                <div class="col">
+                    <p style="font-size: 14px;">
+                        Eventos especiales
+                    </p>
+                    <p style="font-size: 14px;">
+                        Corporativo
+                    </p>
+                    <p style="font-size: 14px;">
+                        Publicidad
+                    </p>
+                </div>
+
+                <div class="col">
+                    <div class="col">
+                        <p style="font-size: 14px;">
+                            Escríbenos
+                        </p>
+                        <p style="font-size: 14px;">
+                            Formulario Devolución Compra en Línea
+                        </p>
+                        <p style="font-size: 14px;">
+                            Trabaja con nosotros
+                        </p>
+
+                        <p style="font-size: 14px;">
+                            Ver mi comprobante electrónico
+                        </p>
+
+                        <p style="font-size: 14px;">
+                            Libro de reclamaciones
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </footer>
+</body>
+<!--js-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+</html>

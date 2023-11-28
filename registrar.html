@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registre</title>
+
+    
+    <!--Bootrtrasp-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!--Icons font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+
+    <!--logica-->
+    <script src="scrip.js"></script>
+</head>
+
+<body>
+    <section class="container-fluid">
+        <div>
+            <a class="nav-link" href="index.html"> <!-- Reemplaza "/otroindex" con la ruta deseada -->
+                <i class="fa-solid fa-reply" style="color: #1957d4;"></i>
+                <i class="fa-solid" style="color: #1554d3;;">AtrÁs</i>
+            </a>
+        </div>
+    </section>
+
+    <section class="container text-center">
+
+        <!--Inicio de sesion-->
+        <div id="contenedorInicio" class="container border border-dark my-2" style="max-width: 500px;">
+            <div></div>
+            <h1 class="text-center text-primary">INICIO DE SESION</h1>
+            <p class="text-center">
+                Ingresa a tu cuenta para disfrutar de tus beneficios,
+                acumular puntos y vivir al máximo la experiencia Cinerama.
+            </p>
+            <form>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">N° de Socio Cinerama</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text"> DNI, RUT, CE o Pasaporte es obligatorio.</div>
+                </div>
+                <div class="my-3">
+                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="my-3">
+                    ¿Olvidaste tu Contraseña?
+                </div>
+
+                <button type="submit" class="btn btn-primary my-3">Ingresar</button>
+            </form>
+        </div>
+
+        <!--Crear una cuenta-->
+        <div id="contenedorRegistrar" class="container border border-dark my-2" style="max-width: 600px; display: none; ">
+            <h1 class="text-center">Unete</h1>
+            <p class="text-center">
+                Completa tus datos y accede a nuestro
+                universo de beneficios
+            </p>
+
+            <section class="row">
+                <div class="col-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Nombre</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">Requerido</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Apellido Materno</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">Requerido</div>
+                        </div>
+                        <div class="my-3">
+                            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+
+                        <div class="dropdown my-5">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Tipo documento
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">DNI</a></li>
+                                <li><a class="dropdown-item" href="#">Carnet de extranjeria</a></li>
+                                <li><a class="dropdown-item" href="#">Pasaporte</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Departammento
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">DNI</a></li>
+                                <li><a class="dropdown-item" href="#">Carnet de extranjeria</a></li>
+                                <li><a class="dropdown-item" href="#">Pasaporte</a></li>
+                            </ul>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Apellido Paterno</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text"> DNI, RUT, CE o Pasaporte es obligatorio.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">Requerido</div>
+                    </div>
+
+                    <div class="my-3">
+                        <label for="exampleInputPassword1" class="form-label"> Confirmar contraseña</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">N° de documento</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">Requerido</div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Provincia
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">DNI</a></li>
+                            <li><a class="dropdown-item" href="#">Carnet de extranjeria</a></li>
+                            <li><a class="dropdown-item" href="#">Pasaporte</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+            <!--Generos-->
+            <div>
+                <h6 class="mb-3 text-center">Género</h6>
+                <div class="d-flex justify-content-start align-items-center">
+                    <div class="form-check mx-3">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">Masculino</label>
+                    </div>
+                    <div class="form-check mx-3">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">Femenino</label>
+                    </div>
+                </div>
+            </div>
+
+            <!--Boton-->
+            <div>
+                <button onclick="registrarUsuario()" type="submit" class="btn btn-primary my-3">Ingresar</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="container text-center my-5">
+        <div class="container border border-dark" style="max-width: 500px;">
+            <div class="">
+                <strong style="color: #CB1111;">
+                    ¿No eres Socio?
+                </strong>
+            </div>
+            <div>
+                Registrándote en nuestro programa Socio Cinerama podrás
+                acumular puntos en cada visita que realices y gozar de grandes beneficios.
+            </div>
+            <div class="my-4">
+                <button onclick="formularioRegister()" class="btn" type="button" style="background-color: #CB1111; color: black;">
+                    Unete
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!--js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+</body>
+
+</html>

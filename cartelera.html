@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CINERAMA</title>
+
+    <!--Bootrtrasp-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <!--Font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--Logica-->
+    <script src="scrip.js"></script>
+
+    <!--Personalizado-->
+    <link rel="stylesheet" href="cartelera.css">
+</head>
+
+<body>
+    <!--Header resposive-->
+    <nav class="container-fluid bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-md order-md-1 mb-4 text-center">
+                    <!-- Utiliza la clase col-md para especificar el tamaño en dispositivos medianos y grandes -->
+                    <a href="index.html">
+                        <button class="btn">
+                            <h1 style="color: #CB1111;">CINERAMA</h1>
+                        </button>
+                    </a>
+                </div>
+
+                <div class="col-md opcionesCinerama order-md-2 text-center mb-3">
+                    <ul class="navbar-nav d-md-flex flex-md-row flex-sm-column">
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="cartelera.html">
+                                <button class="btn" style="color: #fcfcfc;">Peliculas</button>
+                            </a>
+                        </li>
+
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="#">
+                                <button class="btn" style="color: #fcfcfc;">Promociones</button>
+                            </a>
+                        </li>
+
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="alimentos.html">
+                                <button class="btn" style="color: #fcfcfc;">Alimentos</button>
+                            </a>
+                        </li>
+
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="cines.html">
+                                <button class="btn" style="color: #fcfcfc;">Cines</button>
+                            </a>
+                        </li>
+
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="#">
+                                <button class="btn" style="color: #fcfcfc;">Contactanos</button>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md order-md-3 text-center">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link my-2" href="registrar.html">
+                                <i class="fa-solid fa-user-pen" style="color: #fcfcfc;"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="#">
+                                <div class="order-3">
+                                    <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+                                        <i class="fas fa-universal-access" style="color: #fcfcfc;"></i> accesibilidad
+                                    </button>
+                                </div>
+
+                                <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false"
+                                    tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                                    <div class="offcanvas-header">
+                                        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Configuración</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item">
+                                                <label for="fontSizeRange">Tamaño de letra:</label>
+                                                <input type="range" class="form-range" id="fontSizeRange">
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" role="switch"
+                                                        id="colorBlindSwitch">
+                                                    <label class="form-check-label" for="colorBlindSwitch">Activar
+                                                        filtro daltonico</label>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" role="switch"
+                                                        id="darkModeSwitch">
+                                                    <label class="form-check-label" for="darkModeSwitch">
+                                                        <span id="darkModeText">Modo oscuro</span>
+                                                        <span id="lightModeText" style="display: none;">Modo
+                                                            claro</span>
+                                                    </label>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" role="switch"
+                                                        id="flexSwitchCheckDefault">
+                                                    <label class="form-check-label"
+                                                        for="flexSwitchCheckDefault">Resaltar botones</label>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <label for="languageSelect">Seleccionar idioma:</label>
+                                                <select class="form-select" id="languageSelect">
+                                                    <option value="es">Español</option>
+                                                    <option value="en">English</option>
+                                                    <!-- Agrega más opciones de idioma según sea necesario -->
+                                                </select>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="container">
+
+        <!--Peliculas: vive toda la Emocion-->
+        <section class="container-fluid p-4">
+            <div class="container border-bottom border-dark text-center">
+                <h2>Películas</h2>
+                <p>Vive toda la emoción de una película en el cine más cercano a ti.</p>
+            </div>
+        </section>
+
+
+        <!--Botones de Busquedad-->
+        <section class="container-fluid p-4">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-12 mb-3 col-md-4 mb-3">
+                        <button id="btnPeliculas" class="personalizado">
+                            Cartelera
+                        </button>
+                    </div>
+                    <div class="col-12 mb-3 col-md-4 mb-3">
+                        <button id="btnProximosEstrenos" class="personalizado">
+                            Próximos Estrenos
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--Cartelera-->
+        <section class="container border-top border-dark ">
+            <div class="row">
+
+                <!--Filtros a buscar-->
+                <div class="col-12 mb-3 col-md-3 mb-3 border-end border-dark d-none d-md-block">
+                    <div class="container">
+                        <!--Texto Filtar-->
+                        <div class="row my-3">
+                            <i class="fa-solid fa-users-between-lines" style="color: #18191b;"> Listar por: </i>
+                        </div>
+
+                        <!--Primer boton: Ciudad -->
+                        <div class="row">
+                            <div class="dropdown">
+                                <a class="btn btn-outline-dark" href="#" id="dropdownMenuLink"
+                                    data-bs-toggle="dropdown">
+                                    Ciudad
+                                </a>
+
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--Segundo Boton: Cine -->
+                        <br>
+                        <div class="row">
+                            <div class="dropdown">
+                                <a class="btn btn-outline-dark" href="#" id="dropdownMenuLink"
+                                    data-bs-toggle="dropdown">
+                                    Cine
+                                </a>
+
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--Tercer Boton: Dia -->
+                        <br>
+                        <div class="row">
+                            <div class="dropdown">
+                                <a class="btn btn-outline-dark" href="#" id="dropdownMenuLink"
+                                    data-bs-toggle="dropdown">
+                                    Día
+                                </a>
+
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--Cuarto Boton: Genero-->
+                        <br>
+                        <div class="row">
+                            <div class="dropdown">
+                                <a class="btn btn-outline-dark" href="#" id="dropdownMenuLink"
+                                    data-bs-toggle="dropdown">
+                                    Género
+                                </a>
+
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--Quinta boton: Idioma-->
+                        <br>
+                        <div class="row">
+                            <div class="dropdown">
+                                <a class="btn btn-outline-dark" href="#" id="dropdownMenuLink"
+                                    data-bs-toggle="dropdown">
+                                    Idioma
+                                </a>
+
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--Sexto Boton: Formato-->
+                        <br>
+                        <div class="row">
+                            <div class="dropdown">
+                                <a class="btn btn-outline-dark" href="#" id="dropdownMenuLink"
+                                    data-bs-toggle="dropdown">
+                                    Formato
+                                </a>
+
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--Septimo boton: Censura-->
+                        <br>
+                        <div class="row">
+                            <div class="dropdown">
+                                <a class="btn btn-outline-dark" href="#" id="dropdownMenuLink"
+                                    data-bs-toggle="dropdown">
+                                    Censura
+                                </a>
+
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Peliculas-->
+                <div class="col-12 mb-3 col-md-9 mb-3">
+
+                    <!--1: Cartelera visible-->
+                    <div class="cartelera" id="carteleraVisible" style="display: block;">
+                        <!--Fila: 1-->
+                        <div class="row py-3">
+                            <div class="col">
+                                <div class="col">
+                                    <div class="card text-white  mb-3 shadow-drop-center" style="max-width: 16rem;">
+                                        <div class="card-header text-center" style="background-color: #CB1111;">
+                                            <a href="peliculaDetalle.html"
+                                                style="text-decoration: none; color: #fcfcfc;">
+                                                Reservar
+                                            </a>
+                                        </div>
+                                        <img src="img/Pelicula02.jpg" class="card-img-top" alt="...">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card text-white  mb-3 shadow-drop-center " style="max-width: 16rem;">
+                                    <div class="card-header text-center" style="background-color: #CB1111;">
+                                        <a href="http://" style="text-decoration: none; color: #fcfcfc;">
+                                            Reservar
+                                        </a>
+                                    </div>
+
+                                    <img src="img/Pelicula01.jpg" class="card-img-top" alt="...">
+                                </div>
+
+                            </div>
+
+                            <div class="col">
+                                <div class="card text-white  mb-3 shadow-drop-center" style="max-width: 16rem;">
+                                    <div class="card-header text-center" style="background-color: #CB1111;">
+                                        <a href="http://" style="text-decoration: none; color: #fcfcfc;">
+                                            Reservar
+                                        </a>
+                                    </div>
+
+                                    <img src="img/Pelicula03.jpg" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Fila: 2-->
+                        <div class="row py-3">
+                            <div class="col">
+                                <div class="card text-white  mb-3 shadow-drop-center" style="max-width: 16rem;">
+                                    <div class="card-header text-center" style="background-color: #CB1111;">
+                                        <a href="http://" style="text-decoration: none; color: #fcfcfc;">
+                                            Reservar
+                                        </a>
+                                    </div>
+                                    <img src="img/Pelicula04.jpg" class="card-img-top" alt="">
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card text-white  mb-3 shadow-drop-center" style="max-width: 16rem;">
+                                    <div class="card-header text-center" style="background-color: #CB1111;">
+                                        <a href="http://" style="text-decoration: none; color: #fcfcfc;">
+                                            Reservar
+                                        </a>
+                                    </div>
+                                    <img src="img/Marvel.jpg" class="card-img-top" alt="">
+                                </div>
+
+                            </div>
+
+                            <div class="col">
+                                <div class="card text-white  mb-3 " style="max-width: 16rem;">
+                                    <div class="card-header text-center" style="background-color: #CB1111;">
+                                        <a href="http://" style="text-decoration: none; color: #fcfcfc;">
+                                            Reservar
+                                        </a>
+                                    </div>
+                                    <img src="img/Pelicula05.jpg" class="card-img-top" alt="">
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!--Fila: 3 Boton Ver mas-->
+                        <div class="row">
+                            <div class="text-center p-2">
+                                <button onclick="mostrarOculta()" type="button" class="personalizado">Ver mas</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!--2: Cartelera No visible-->
+                    <div class="" id="carteleraOculta" style="display: none;">
+                        <!--Fila: 1-->
+                        <div class="row py-3">
+                            <div class="col">
+                                <div class="col">
+                                    <div class="card text-white  mb-3 shadow-drop-center" style="max-width: 16rem;">
+                                        <div class="card-header text-center" style="background-color: #CB1111;">
+                                            <a href="http://" style="text-decoration: none; color: #fcfcfc;">
+                                                Reservar
+                                            </a>
+                                        </div>
+                                        <img src="img/Susy_1.jpg" class="card-img-top" alt="...">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card text-white  mb-3 shadow-drop-center " style="max-width: 16rem;">
+                                    <div class="card-header text-center" style="background-color: #CB1111;">
+                                        <a href="http://" style="text-decoration: none; color: #fcfcfc;">
+                                            Reservar
+                                        </a>
+                                    </div>
+
+                                    <img src="img/Coco_2.jpg" class="card-img-top" alt="...">
+                                </div>
+
+                            </div>
+
+                            <div class="col">
+                                <div class="card text-white  mb-3 shadow-drop-center" style="max-width: 16rem;">
+                                    <div class="card-header text-center" style="background-color: #CB1111;">
+                                        <a href="http://" style="text-decoration: none; color: #fcfcfc;">
+                                            Reservar
+                                        </a>
+                                    </div>
+
+                                    <img src="img/Vampiro_3.jpg" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Fila: 2-->
+                        <div class="row py-3">
+                            <div class="col">
+                                <div class="card text-white  mb-3" style="max-width: 16rem;">
+                                    <div class="card-header text-center" style="background-color: #CB1111;">
+                                        <a href="http://" style="text-decoration: none; color: #fcfcfc;">
+                                            Reservar
+                                        </a>
+                                    </div>
+                                    <img src="img/Justiciero_4.jpg" class="card-img-top" alt="">
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card text-white  mb-3" style="max-width: 16rem;">
+                                    <div class="card-header text-center" style="background-color: #CB1111;">
+                                        <a href="http://" style="text-decoration: none; color: #fcfcfc;">
+                                            Reservar
+                                        </a>
+                                    </div>
+                                    <img src="img/Marvel.jpg" class="card-img-top" alt="">
+                                </div>
+
+                            </div>
+
+                            <div class="col">
+                                <div class="card text-white  mb-3" style="max-width: 16rem;">
+                                    <div class="card-header text-center" style="background-color: #CB1111;">
+                                        <a href="http://" style="text-decoration: none; color: #fcfcfc;">
+                                            Reservar
+                                        </a>
+                                    </div>
+                                    <img src="img/Hipnosis.jpg" class="card-img-top" alt="">
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <!--3: Proximos Estrenos-->
+                    <div class="cartelera" id="ProximoEstrenos" style="display: none;">
+                        <!--Fila: 1-->
+                        <div class="row py-3">
+                            <div class="col">
+                                <div class="col">
+                                    <div class="card text-white  mb-3 shadow-drop-center" style="max-width: 16rem;">
+                                        <div class="card-header text-center" style="background-color: #CB1111;">
+                                            <a href="peliculaDetalle.html"
+                                                style="text-decoration: none; color: #fcfcfc;">
+                                                Estreno
+                                            </a>
+                                        </div>
+                                        <img src="img/Estreno01.jpg" class="card-img-top" alt="...">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card text-white  mb-3 shadow-drop-center " style="max-width: 16rem;">
+                                    <div class="card-header text-center" style="background-color: #CB1111;">
+                                        <a href="http://" style="text-decoration: none; color: #fcfcfc;">
+                                            Estreno
+                                        </a>
+                                    </div>
+
+                                    <img src="img/Estreno03.jpg" class="card-img-top" alt="...">
+                                </div>
+
+                            </div>
+
+                            <div class="col">
+                                <div class="card text-white  mb-3 shadow-drop-center" style="max-width: 16rem;">
+                                    <div class="card-header text-center" style="background-color: #CB1111;">
+                                        <a href="http://" style="text-decoration: none; color: #fcfcfc;">
+                                            Estreno
+                                        </a>
+                                    </div>
+
+                                    <img src="img/Estreno04.jpg" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Fila: 2-->
+                        <div class="row py-3">
+
+                            <div class="col">
+                                <div class="card text-white  mb-3 shadow-drop-center" style="max-width: 16rem;">
+                                    <div class="card-header text-center" style="background-color: #CB1111;">
+                                        <a href="http://" style="text-decoration: none; color: #fcfcfc;">
+                                            Estreno
+                                        </a>
+                                    </div>
+                                    <img src="img/Estreno02.jpg" class="card-img-top" alt="">
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card text-white  mb-3 shadow-drop-center" style="max-width: 16rem;">
+                                    <div class="card-header text-center" style="background-color: #CB1111;">
+                                        <a href="http://" style="text-decoration: none; color: #fcfcfc;">
+                                            Estreno
+                                        </a>
+                                    </div>
+                                    <img src="img/Estreno05.jpg" class="card-img-top" alt="">
+                                </div>
+
+                            </div>
+
+                            <div class="col">
+                                <div class="card text-white  mb-3 shadow-drop-center" style="max-width: 16rem;">
+                                    <div class="card-header text-center" style="background-color: #CB1111;">
+                                        <a href="http://" style="text-decoration: none; color: #fcfcfc;">
+                                            Estreno
+                                        </a>
+                                    </div>
+                                    <img src="img/Estreno06.jpg" class="card-img-top" alt="">
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </section>
+
+    </section>
+
+
+
+
+    <!--footer-->
+    <footer class="container-fluid p-5 bg-dark text-white">
+        <section class="container">
+            <section class="row">
+                <div class="col">
+
+                </div>
+                <div class="col">
+                    <h6>PROGRAMACIÓN</h6>
+                </div>
+                <div class="col">
+                    <h6>SOBRE CINEMARK</h6>
+                </div>
+                <div class="col">
+                    <h6>OTROS SERVICIOS</h6>
+                </div>
+                <div class="col">
+                    <h6>CONTACTO</h6>
+                </div>
+            </section>
+        </section>
+
+        <section class="container">
+            <section class="row">
+                <div class="col  text-center" style="color: #CB1111; font-size: 20px;">
+                    <br>
+                    <br>
+                    CINERAMA
+                </div>
+
+                <div class="col">
+                    <p style="font-size: 14px;">
+                        Cartelera
+                    </p>
+                    <p style="font-size: 14px;">
+                        Próximamente
+                    </p>
+                    <p style="font-size: 14px;">
+                        Preventa
+                    </p>
+                </div>
+
+                <div class="col">
+                    <p style="font-size: 14px;">
+                        Nosotros
+                    </p>
+                    <p style="font-size: 14px;">
+                        Salas y Formatos
+                    </p>
+                    <p style="font-size: 14px;">
+                        Términos y condiciones
+                    </p>
+                    <p style="font-size: 14px;">
+                        Política de Protección de Datos Personales
+                    </p>
+                </div>
+
+                <div class="col">
+                    <p style="font-size: 14px;">
+                        Eventos especiales
+                    </p>
+                    <p style="font-size: 14px;">
+                        Corporativo
+                    </p>
+                    <p style="font-size: 14px;">
+                        Publicidad
+                    </p>
+                </div>
+
+                <div class="col">
+                    <div class="col">
+                        <p style="font-size: 14px;">
+                            Escríbenos
+                        </p>
+                        <p style="font-size: 14px;">
+                            Formulario Devolución Compra en Línea
+                        </p>
+                        <p style="font-size: 14px;">
+                            Trabaja con nosotros
+                        </p>
+
+                        <p style="font-size: 14px;">
+                            Ver mi comprobante electrónico
+                        </p>
+
+                        <p style="font-size: 14px;">
+                            Libro de reclamaciones
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </footer>
+</body>
+
+<!--js-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+</html>
